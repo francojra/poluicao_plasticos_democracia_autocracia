@@ -65,4 +65,15 @@ pol_plas2 <- pol_plas %>%
 
 # Gráficos ---------------------------------------------------------------------------------------------------------------------------------
 
+c4a("safe", 5)
 
+ggplot(pol_plas1, aes(x = fct_reorder(Entity, res_plas), 
+                      y = res_plas, fill = Entity)) +
+  geom_col() +
+  scale_fill_manual(values = c("#88CCEE", "#CC6677",
+                               "#DDCC77", "#117733",
+                               "#332288")) +
+  scale_y_continuous(expand = expansion(mult = c(0,0))) +
+  labs(x = "Países", y = "Resíduos de plástico (kg)\n gerados em 2019") +
+  theme_ipsum(axis_text_size = 14, axis_title_size = 16) +
+  theme(legend.position = "none", axis.text = element_text(color = "black")) 
