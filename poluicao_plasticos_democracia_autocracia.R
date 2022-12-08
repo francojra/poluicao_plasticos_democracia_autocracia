@@ -54,6 +54,15 @@ pol_plas <- pol_plas %>%
   rename(res_plas = Mismanaged.plastic.waste.to.ocean.per.capita..kg.per.year.) %>%
   view()
 
+pol_plas1 <- pol_plas %>%
+  filter(Entity %in% c("United States", "Japan", "Germany",
+                       "Cuba", "China", "North Korea")) %>%
+  view()
 
+pol_plas2 <- pol_plas %>%
+  filter(Entity %in% c("United States", "China", "Brazil")) %>%
+  view()
+
+# Gráficos ---------------------------------------------------------------------------------------------------------------------------------
 
 
