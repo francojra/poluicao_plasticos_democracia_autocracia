@@ -23,3 +23,37 @@
 ### Os sistemas de gestão de resíduos em todo o mundo são fundamentais para reduzir a 
 ### poluição plástica.
 
+### Cerca de 20% de todo lixo plástico nos oceanos vem de fontes marinhas. Os outros 80%
+### da terra. Em algumas regiões, fontes marinhas dominam: mais que 80% no Grande Mancha 
+### de Lixo do Pacífico (GPGP) vem de redes marinhas, cordas e linhas de pesca.
+
+### Plástico é o único material com muitos benefícios: ele é barato, versátil, de baixo
+### peso e resistente. Isso torna a disponibilidade do material para muitas funções. Ele
+### também pode promover benefícios ambientais: ele promove um crítico papel na conservação
+### da qualidade dos alimentos, segurança e redução do desperdício alimentar. O trade-off 
+### entre plásticos e substitutos (ou proibições completas) é complexo e pode criar impacto
+### negativo sobre o meio ambiente.
+
+# Carregar pacotes -------------------------------------------------------------------------------------------------------------------------
+
+library(tidyverse)
+library(cols4all)
+library(hrbrthemes)
+library(ggthemes)
+
+# Carregar dados ---------------------------------------------------------------------------------------------------------------------------
+
+pol_plas <- read.csv("plastic-pollution.csv")
+view(pol_plas)
+names(pol_plas)
+
+# Manipular dados --------------------------------------------------------------------------------------------------------------------------
+
+pol_plas <- pol_plas %>%
+  select(-Code) %>%
+  rename(res_plas = Mismanaged.plastic.waste.to.ocean.per.capita..kg.per.year.) %>%
+  view()
+
+
+
+
