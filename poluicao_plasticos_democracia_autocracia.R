@@ -80,14 +80,14 @@ ggplot(pol_plas1, aes(x = fct_reorder(Entity, res_plas),
   theme_ipsum(axis_text_size = 14, axis_title_size = 16) +
   theme(legend.position = "none", axis.text = element_text(color = "black")) 
 
-ggplot(malaria3, aes(x = Year, y = taxa_morte, 
-                  group = Entity, col = Entity)) +
-  geom_line(size = 2) +
-  scale_color_manual(values = c('#1B9E77', '#999999','#E69F00'),
-                     labels = c("Brasil", "China", "Estados Unidos")) +
-  labs(x = "Tempo (anos)", y = "Taxa de morte por malária", 
-       color = "Países") +
+ggplot(pol_plas2, aes(x = fct_reorder(Entity, res_plas), 
+                      y = res_plas, fill = Entity)) +
+  geom_col() +
+  scale_fill_manual(values = c('#1B9E77', '#999999','#E69F00')) +
+  scale_x_discrete(labels = c("Estados Unidos", "China", "Brasil")) +
+  labs(x = "Países", y = "Resíduos de plástico (kg)\n gerados em 2019") +  
   theme_light() +
-  theme(axis.title = element_text(size = 18),
+  theme(legend.position = "none",
+        axis.title = element_text(size = 18),
         axis.text = element_text(color = "black", size = 15),
         legend.text = element_text(size = 12))
